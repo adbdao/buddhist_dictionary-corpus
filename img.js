@@ -2,7 +2,7 @@
 var fs = require('fs')
 var path = require('path')
 // 可改寫副檔名及編碼
-var x = '.txt'
+var x = '.log'
 var ru = 'utf8'
 var wu = 'utf8'
 // 完成後的副檔名
@@ -22,6 +22,8 @@ function XmlAddMypb(go) {
 
     // 取得當前目錄下所有檔案及資料夾
     var d = fs.readdirSync(h)
+    // 存放結果文字
+    var pic = []
     // 循環目錄
     for (var k of d) {
         // 取得絕對路徑，並規範化路徑
@@ -44,15 +46,14 @@ function XmlAddMypb(go) {
 
             // ======
             // 進行你要的操作
-            var pic = []
             for (var i = 0; i < b.length; i++) {
                 if (/<img/.test(b[i])) {
-                    pic[i] = b[i].replace(/.*<img n=("[^]+")\/?>.*/g, '$1')
+                    pic.push(b[i].replace(/.*<img n=("[^"]+")\/?>.*/g, '$1'))
                 }
             }
 
             // 用絕對路徑寫入檔案
-            fs.writeFileSync('img.txt', pic.join('\n').replace(/\s+/g, ',\n'), wu)
+            fs.writeFileSync('img.txt', pic.join(',\n'), wu)
 
             // 完成時返回通知
             console.log(' OK: ' + n + afterName)

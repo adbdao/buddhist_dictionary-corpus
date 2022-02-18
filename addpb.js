@@ -49,7 +49,7 @@ function XmlAddMypb(go) {
             // b[0].replace(/[0xEF|0xBB|0xBF]/,'')
 
             // 開頭加上<file>
-            b[0] = b[0].replace(/^(.)/, '<file>\n$1')
+            // b[0] = b[0].replace(/^(.)/, '<file>\n$1')
 
             // 加上批次冊碼頁碼
             // 預設變量，才能累加冊碼頁碼
@@ -69,7 +69,7 @@ function XmlAddMypb(go) {
                 // b[i] = b[i] + '<pb n="' + j + '"/>'
                 // 先刪除舊的<頁>標記
                 // 取代標記
-                b[i] = b[i].replace(/<頁碼? id.+>/g, '')
+                b[i] = b[i].replace(/<頁碼? [^>]+>/g, '')
                     .replace(/檔>/g, 'file>')
                     .replace(/<檔/g, '<file')
                     .replace(/&/g, '＆')
@@ -121,6 +121,15 @@ function XmlAddMypb(go) {
                     .replace(/藥>/g, 'by>')
                     .replace(/方>/g, 'bf>')
                     .replace(/症>/g, 'bz>')
+                    .replace(/《/g, '<bf>《')
+                    .replace(/》/g, '》</bf>')
+                    .replace(/〈/g, '<by>〈')
+                    .replace(/〉/g, '〉</by>')
+                    .replace(/〔/g, '<bz>〔')
+                    .replace(/〕/g, '〕</bz>')
+                    .replace(/(<\/?by>)<\/?by>/g, '$1')
+                    .replace(/(<\/?bf>)<\/?bf>/g, '$1')
+                    .replace(/(<\/?bz>)<\/?bz>/g, '$1')
                 // // 調整[註釋]標記
                 // if (/<fn /.test(b[i])) {
                 //     b[i] = b[i].replace(/(<fn n=")([^"]+)("\/>)/g, '<link to ="' + path.basename(n,'.txt') + '_' + sfn + '">▼</link>')
