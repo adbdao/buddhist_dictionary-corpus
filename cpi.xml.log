@@ -1,4 +1,4 @@
-﻿<file n="cpi.xml">
+﻿<file>
 <pb n="1"/>
 <article>漢巴名詞索引</article>
 
@@ -189,7 +189,7 @@ ra 96
 <xa>佛陀</xa>Buddha 3,17,74,115,227
 <xa>佛護</xa>Buddharakkhita 154
 <xa>陀那</xa>dona 365
-<xa>陀摩西柯<si></xa>烟焰龍王</si>　 Dhumasikha 207
+<xa>陀摩西柯</xa><si>烟焰龍王</si>　 Dhumasikha 207
 <xa>陀拘羅<si>布</si></xa>Dukula 257
 <xa>伽烏多</xa>gavuta 118
 <xa>伽伽羅<si>池</si></xa>Gaggaraya 208
@@ -629,7 +629,7 @@ Yugandhara 206
 <h2>十五畫</h2>
 <xa>增支<si>部</si></xa>Anguttara 74,76
 <xa>額部曇</xa>abbuda 236
-<xa>犛<si></xa>牦</si>牛　 camari 36,392
+<xa>犛</xa><si>牦</si>牛　 camari 36,392
 <xa>墨地尼<si>地</si></xa>medini 125
 <xa>德瞿<si>火</si></xa>tejo 171
 <xa>羯磨</xa>kamma 706

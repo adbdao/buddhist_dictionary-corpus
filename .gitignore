@@ -11,6 +11,10 @@ V1
 V2
 V
 big
+dic
+A_IMAGES
+B_IMAGES
+C_IMAGES
 
 *.zip
 *.bak
@@ -25,4 +29,4 @@ big
 *.txt
 *.ini
 *.xml
-
+*.cor
